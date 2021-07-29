@@ -1,13 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Button = ({ fetchArticles }) => {
+const Button = ({ fetchPhotos }) => {
   return (
     <>
-      <button onClick={fetchArticles} className="Button">
+      <button onClick={fetchPhotos} className="Button">
         Load more
       </button>
     </>
   );
+};
+
+Button.prototype = {
+  fetchPhotos: PropTypes.func.isRequired,
 };
 
 export default Button;

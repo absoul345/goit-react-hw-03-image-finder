@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React, { Component } from 'react';
 import Button from './components/button/Button';
 import ImageGallery from './components/imageGallery/ImageGallery';
@@ -90,7 +89,7 @@ export class App extends Component {
 
         <ImageGallery photos={photos} toggleModal={this.toggleModal} />
 
-        {shouldRenderLoadMoreBtn && <Button fetchArticles={this.fetchPhotos} />}
+        {shouldRenderLoadMoreBtn && <Button fetchPhotos={this.fetchPhotos} />}
       </div>
     );
   }

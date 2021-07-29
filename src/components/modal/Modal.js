@@ -1,8 +1,11 @@
+/* eslint-disable react/no-typos */
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
+import PropTypes from 'prop-types';
+
 const modalRoot = document.querySelector('#modal-root');
 
-export default class Modal extends Component {
+class Modal extends Component {
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);
   }
@@ -36,3 +39,11 @@ export default class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  url: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
+
+export default Modal;
