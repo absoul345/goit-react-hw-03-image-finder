@@ -41,19 +41,13 @@ export class App extends Component {
 
     pixabayApi
       .fatchPhotos(options)
-      .then(
-        hits => {
-          this.setState(prevState => ({
-            photos: [...prevState.photos, ...hits],
-            currentPage: prevState.currentPage + 1,
-          }));
-          console.log(hits);
-        },
-        window.scrollTo({
-          top: document.documentElement.scrollHeight,
-          behavior: 'smooth',
-        }),
-      )
+      .then(hits => {
+        this.setState(prevState => ({
+          photos: [...prevState.photos, ...hits],
+          currentPage: prevState.currentPage + 1,
+        }));
+        console.log(hits);
+      })
       .catch(error => this.setState({ error }))
       .finally(() => {
         this.setState({ isLoading: false });
